@@ -24,7 +24,7 @@ const MainTableWrapper = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [open, setOpen] = useState(false);
 
-  const handleChangeDay = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChangeDay = (_: any, newValue: number) => {
     setValue(newValue.toString());
     let tempAllEvents = [...allEvents];
     tempAllEvents = tempAllEvents.filter(
