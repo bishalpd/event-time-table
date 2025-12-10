@@ -21,12 +21,12 @@ export const generateNext7Days = () => {
     date.setDate(today.getDate() + i);
 
     const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
-    const formatted = date.toLocaleDateString("en-GB"); // dd/mm/yyyy
+    const formatted = date.toLocaleDateString("en-GB"); 
 
     days.push({
       day: dayName,
-      date: formatted.replace(/\//g, "-"), // convert dd/mm/yyyy → dd-mm-yyyy
-      id: date.toISOString().split("T")[0], // yyyy-mm-dd (safe unique id)
+      date: formatted.replace(/\//g, "-"), 
+      id: date.toISOString().split("T")[0], 
     });
   }
 
@@ -94,6 +94,11 @@ export const getEventRowSpan = (
   return rowToMerge + 1;
 };
 
+const getForwaredDate = (day:number) => {
+  const d = new Date();
+  d.setDate(d.getDate() + day);
+  return d.toISOString().slice(0, 10); // YYYY-MM-DD
+};
  export const getDefaultEvents = () => {
     const today = new Date().toISOString().slice(0, 10);
 
@@ -118,7 +123,7 @@ export const getEventRowSpan = (
         id: "e3",
         title: "Market Boosters",
         venueIds: ["v3"],
-        date: '2025-12-13',
+        date: getForwaredDate(3),
         start: "10:30",
         end: "11:00",
       },
@@ -126,7 +131,7 @@ export const getEventRowSpan = (
         id: "e4",
         title: "Strategic Business Planner",
         venueIds: ["v2"],
-        date: '2025-12-12',
+        date: getForwaredDate(2),
         start: "10:30",
         end: "11:00",
       },

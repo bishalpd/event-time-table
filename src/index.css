@@ -5,12 +5,32 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+.fullwidth-scroll-tabs .MuiTabs-flexContainer {
+  display: flex;
+  flex: 1;
+}
+
+.fullwidth-scroll-tabs .MuiTab-root {
+  flex: 1 0 auto; /* stretch but still allow scroll */
+  min-width: 150px; /* adjust for your design */
+  text-align: center;
+}
+
+.fullwidth-scroll-tabs .MuiTabs-scrollButtons {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.fullwidth-scroll-tabs .MuiTabs-scrollButtons.Mui-disabled {
+  opacity: 0.3 !important;
+}
 
 .table-container {
   overflow: auto;
   max-height: 600px;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   background: white;
 }
@@ -24,13 +44,12 @@ body {
 .schedule-table td {
   border: 1px solid #ddd;
   padding: 8px;
-  /* background: white; */
 }
 
 .sticky-top {
   position: sticky;
   top: 0;
-  /* background: white; */
+
   z-index: 20;
   white-space: nowrap;
   min-width: 200px;
@@ -42,7 +61,7 @@ body {
 .sticky-left {
   position: sticky;
   left: 0;
-  /* background: white; */
+
   z-index: 30;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background-color: #f8fcff;
