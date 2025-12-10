@@ -80,7 +80,7 @@ export const isSlotInEvent = (
 };
 
 export const getEventRowSpan = (
-  slotId: string,
+  _:any,
   event: Event,
   slots: TimeSlot[]
 ) => {
