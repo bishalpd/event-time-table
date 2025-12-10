@@ -1,5 +1,13 @@
+import { CssBaseline } from "@mui/material";
+import MainTableWrapper from "./components/MainTableWrapper";
+
 function App() {
-  return <h1>Event Time Table</h1>;
+  return (
+    <div>
+      <CssBaseline />
+      <MainTableWrapper />
+    </div>
+  );
 }
 
 export default App;
